@@ -13,7 +13,7 @@ class SharedPtr {
     ptr = nullptr;
     number = nullptr;
   }
-  SharedPtr(T* pt) {
+  explicit SharedPtr(T* pt) {
     ptr = pt;
     number = new std::atomic<int>;
     *number = 1;
@@ -73,7 +73,7 @@ class SharedPtr {
   }
   void reset(T* pt) {
     if (*this) {
-      *number--;
+      (*number)--;
       if (*number == 0) {
         delete number;
         delete ptr;
@@ -89,14 +89,13 @@ class SharedPtr {
       *number = 1;
     }
   }
-  void swap(SharedPtr& r) {
+  void Swap(SharedPtr& r) {
     SharedPtr a;
     a = r;
     r = *this;
     *this = a;
   }
-  // возвращает количество объектов SharedPtr, которые ссылаются на тот же
-  // управляемый объект
+
   size_t use_count() const { return static_cast<size_t>(*number); }
 
  private:

@@ -43,7 +43,7 @@ TEST(SHARED_PTR, test_of_reset) {
 TEST(SHARED_PTR, test_of_swap) {
   SharedPtr<int> p(new int(3));
   SharedPtr<int> p1(new int(10));
-  p1.swap(p);
+  p1.Swap(p);
   EXPECT_EQ(p1.use_count(), 1);
   EXPECT_EQ(p.use_count(), 1);
   EXPECT_EQ(*p1, 3);
