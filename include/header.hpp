@@ -10,7 +10,9 @@ template <typename T>
 class SharedPtr {
  public:
   SharedPtr() {
+    ptr = new T;
     ptr = nullptr;
+    number = new std::atomic<int>;
     number = nullptr;
   }
   explicit SharedPtr(T* pt) {
@@ -30,6 +32,7 @@ class SharedPtr {
       reset();
     } else if (*number > 1) {
       (*number)--;
+      ptr = nullptr;
     }
   }
   // SharedPtr(SharedPtr&& r);
