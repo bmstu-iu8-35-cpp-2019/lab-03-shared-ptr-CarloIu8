@@ -4,7 +4,7 @@
 
 #include <header.hpp>
 
-TEST(SHARED_PTR, init) {
+/*TEST(SHARED_PTR, init) {
   SharedPtr<int> ptr;
   //EXPECT_FALSE(ptr);
   SharedPtr<int> p(new int(5));
@@ -17,8 +17,9 @@ TEST(SHARED_PTR, init) {
   EXPECT_EQ(*p1, 5);
   //EXPECT_TRUE(p1);
 }
+*/
 
-/*TEST(SHARED_PTR, assign) {
+TEST(SHARED_PTR, assign) {
   SharedPtr<int> p(new int(8));
   SharedPtr<int> p1(new int(2));
   p = p1;
@@ -26,7 +27,7 @@ TEST(SHARED_PTR, init) {
   EXPECT_EQ(p.use_count(), 2);
   EXPECT_EQ(*p1, *p);
   EXPECT_TRUE(p1);
-}*/
+}
 
 /*TEST(SHARED_PTR, test_of_reset) {
   SharedPtr<int> p(new int(3));
