@@ -38,6 +38,10 @@ class SharedPtr {
   SharedPtr& operator=(const SharedPtr& r) {
     if (*this && r) {
       (*number)--;
+      if (number == 0) {
+        delete ptr;
+        delete number;
+	  }
       ptr = r.ptr;
       number = r.number;
       (*number)++;
