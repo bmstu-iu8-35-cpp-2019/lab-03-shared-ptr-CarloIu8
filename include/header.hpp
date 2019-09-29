@@ -37,7 +37,7 @@ class SharedPtr {
   SharedPtr& operator=(const SharedPtr& r) {
     if (*this && r) {
       (*number)--;
-      if (number == 0) {
+      if (*number == 0) {
         delete ptr;
         delete number;
         ptr = nullptr;
