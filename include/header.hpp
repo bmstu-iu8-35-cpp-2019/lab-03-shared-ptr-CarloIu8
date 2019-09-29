@@ -65,6 +65,7 @@ class SharedPtr {
         number = nullptr;
       } else if (*number > 1) {
         (*number)--;
+        ptr = nullptr;
       }
     }
   }
