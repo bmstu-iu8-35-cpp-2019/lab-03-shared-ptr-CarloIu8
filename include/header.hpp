@@ -41,7 +41,7 @@ class SharedPtr {
       if (number == 0) {
         delete ptr;
         delete number;
-	  }
+      }
       ptr = r.ptr;
       number = r.number;
       (*number)++;
