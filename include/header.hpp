@@ -27,11 +27,10 @@ class SharedPtr {
   }
   ~SharedPtr() {
     if (number == nullptr || ptr == nullptr) return;
-    if (*number == 1) {
-      reset();
-    } else if (*number > 1) {
-      (*number)--;
-      ptr = nullptr;
+    (*number)--;
+    if (*number == 0) {
+      delete ptr;
+      delete number;
     }
   }
   // SharedPtr(SharedPtr&& r);
