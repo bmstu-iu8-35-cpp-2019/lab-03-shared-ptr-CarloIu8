@@ -25,7 +25,7 @@ TEST(SHARED_PTR, assign) {
   EXPECT_EQ(p.use_count(), p1.use_count());
   EXPECT_EQ(p.use_count(), 2);
   EXPECT_EQ(*p1, *p);
-  EXPECT_TRUE(p1);
+  EXPECT_TRUE(p1);*/
 }
 
 TEST(SHARED_PTR, test_of_reset) {
@@ -40,7 +40,7 @@ TEST(SHARED_PTR, test_of_reset) {
   EXPECT_EQ(*p1, 10);
 }*/
 
-TEST(SHARED_PTR, test_of_swap) {
+/*TEST(SHARED_PTR, test_of_swap) {
   SharedPtr<int> p(new int(3));
   SharedPtr<int> p1(new int(10));
   p1.Swap(p);
@@ -48,4 +48,4 @@ TEST(SHARED_PTR, test_of_swap) {
   EXPECT_EQ(p.use_count(), 1);
   EXPECT_EQ(*p1, 3);
   EXPECT_EQ(*p, 10);
-}
+}*/
