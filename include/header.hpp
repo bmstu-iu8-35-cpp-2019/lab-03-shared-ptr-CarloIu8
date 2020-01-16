@@ -5,6 +5,7 @@
 #include <atomic>
 #include <exception>
 #include <iostream>
+#include <utility>
 
 template <typename T>
 class SharedPtr {
