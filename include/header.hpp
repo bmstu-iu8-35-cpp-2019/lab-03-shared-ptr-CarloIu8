@@ -30,7 +30,7 @@ class SharedPtr {
     number = r.number;
     r.number = nullptr;
     ptr = r.ptr;
-    r.data = nullptr;
+    r.ptr = nullptr;
   }
 
   ~SharedPtr() {
