@@ -25,6 +25,13 @@ class SharedPtr {
       (*number)++;
     }
   }
+  SharedPtr(SharedPtr&& r) {
+    control = r.control;
+    r.control = nullptr;
+    data = r.data;
+    r.data = nullptr;
+  }
+
   ~SharedPtr() {
     if (number == nullptr || ptr == nullptr) return;
     (*number)--;
@@ -98,10 +105,7 @@ class SharedPtr {
     }
   }
   void Swap(SharedPtr& r) {
-    SharedPtr a;
-    a = r;
-    r = *this;
-    *this = a;
+    if (data != r.data) std::swap(r, *this);
   }
 
   size_t use_count() const { return static_cast<size_t>(*number); }
